@@ -1,3 +1,6 @@
+import recursive as recur
+
+
 def change_bullet_style(document):
     return "\n".join(list(map(convert_line, document.split("\n"))))
 
@@ -35,21 +38,51 @@ def join_first_sentences(sentences, n):
 
 
 def main():
-    result1 = change_bullet_style("* Alai\n- Dink Meeker\n")
-    # print(result1)
+    try:
+        result1 = change_bullet_style("* Alai\n- Dink Meeker\n")
+        # print(result1)
 
-    result2 = remove_invalid_lines(
-        "\n* We are the music makers\n- And we are the dreamers of dreams\n* Come with me and you'll be\n",
-    )
-    # print(result2)
+        result2 = remove_invalid_lines(
+            "\n* We are the music makers\n- And we are the dreamers of dreams\n* Come with me and you'll be\n",
+        )
+        # print(result2)
 
-    # ["I don't feel safe", "Are you cussing with me"],
-    # 2,
-    result3 = join_first_sentences(
-        ["I don't feel safe", "Are you cussing with me"],
-        2,
-    )
-    print(result3)
+        # ["I don't feel safe", "Are you cussing with me"],
+        # 2,
+        result3 = join_first_sentences(
+            ["I don't feel safe", "Are you cussing with me"],
+            2,
+        )
+        # print(result3)
+
+        a = ["a", "b", "c"]
+        b = [1, 2, 3]
+        # print(a[-len(a) + 1 : len(a)])
+        # print(b[-len(b) + 1 : len(b)])
+
+        # result = recur.zipmap(["a", "b", "c"], [1, 2, 3])
+        # print(result)
+
+        # root = [1, 2, [3, 4]]
+        # result = recur.sum_nested_list(root)
+        # print(result)
+
+        root = {
+            "Documents": {
+                "Proposal.docx": None,
+                "Receipts": {
+                    "January": {"receipt1.txt": None, "receipt2.txt": None},
+                    "February": {"receipt3.txt": None},
+                },
+            },
+        }
+        result = recur.list_files(root)
+        print(result)
+        temp_list = []
+        temp_list.append("a")
+        print(temp_list)
+    except Exception as e:
+        print(e)
 
 
 if __name__ == "__main__":
