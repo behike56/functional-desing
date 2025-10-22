@@ -62,3 +62,40 @@ def list_files(parent_directory, current_filepath=""):
         if isinstance(value, dict)
         for file in list_files(value, current_filepath + key + "/")
     ]
+
+
+def find_longest_word(document, longest_word=""):
+    if document == "":
+        return longest_word
+
+    doc = document.split(" ")
+    if len(doc[0]) > len(longest_word):
+        longest_word = doc[0]
+
+    return find_longest_word(" ".join(doc[1:]), longest_word)
+
+
+def count_nested_levels(nested_documents, target_document_id, level=1):
+    """
+    ネストされた辞書の中で target_document_id が現れる深さを返す。
+    見つからない場合は None を返す。
+    {
+        1: {
+            3: {}
+        },
+        2: {}
+    },
+    """
+
+    for key, value in nested_documents.items():
+        if key == target_document_id:
+            return level  # 見つかったら現在のレベルを返す
+
+        # value が辞書なら再帰的に探索
+        if isinstance(value, dict):
+            result = count_nested_levels(value, target_document_id, level + 1)
+            if result != -1:
+                return result  # 見つかった場合のみ返す
+
+    # この階層には見つからなかった
+    return -1

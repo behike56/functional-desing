@@ -1,4 +1,5 @@
 import recursive as recur
+import closures as clos
 
 
 def change_bullet_style(document):
@@ -76,11 +77,28 @@ def main():
                 },
             },
         }
-        result = recur.list_files(root)
+        # result = recur.list_files(root)
+        # print(result)
+        # temp_list = []
+        # temp_list.append("a")
+        # print(temp_list)
+        #
+        # nested_documents = {1: {2: {3: {}, 4: {5: {}}}, 6: {}, 7: {8: {9: {10: {}}}}}}
+        # result = recur.count_nested_levels(nested_documents, 9)
+        # print(result)
+        # nested_documents = {1: {}, 2: {}, 3: {}}
+        # for i in nested_documents.items():
+        #     print(i)
+        val1 = []
+        val2 = [1, 2, 3]
+        val1.append(val2)
+        val1.append(4)
+        val1.append("5")
+        print(val1)
+        result = clos.new_collection(["Dan Evans"])
         print(result)
-        temp_list = []
-        temp_list.append("a")
-        print(temp_list)
+        result2 = clos.new_collection(["Charlie Prince"])
+        print(result2)
     except Exception as e:
         print(e)
 
