@@ -88,7 +88,6 @@ def main():
         # print(result)
         # nested_documents = {1: {}, 2: {}, 3: {}}
         # for i in nested_documents.items():
-        #     print(i)
         val1 = []
         val2 = [1, 2, 3]
         val1.append(val2)
