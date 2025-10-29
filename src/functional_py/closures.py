@@ -25,11 +25,11 @@ def new_collection(initial_docs):
 from functools import reduce
 
 
-def lines_with_sequence(char):
-    def with_char(length):
-        def with_length(doc):
-            return reduce(countchar), doc.split())
+# def lines_with_sequence(char):
+#     def with_char(length):
+#         def with_length(doc):
+#             return reduce(countchar, doc.split())
 
-        return with_length
+#         return with_length
 
-    return with_char
+#     return with_char

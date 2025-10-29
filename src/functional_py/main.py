@@ -1,5 +1,6 @@
 import recursive as recur
 import closures as clos
+import decorators as deco
 
 
 def change_bullet_style(document):
@@ -40,63 +41,26 @@ def join_first_sentences(sentences, n):
 
 def main():
     try:
-        result1 = change_bullet_style("* Alai\n- Dink Meeker\n")
-        # print(result1)
+        deco.args_logger("hi", True, f_name="Lane", l_name="Wagner", age=28)
+        # test_dict = {
+        #     "a": 1,
+        #     "b": 2,
+        #     "c": 3,
+        #     "d": 4,
+        #     "e": 5,
+        #     "f": 6,
+        #     "g": 7,
+        # }
 
-        result2 = remove_invalid_lines(
-            "\n* We are the music makers\n- And we are the dreamers of dreams\n* Come with me and you'll be\n",
-        )
-        # print(result2)
-
-        # ["I don't feel safe", "Are you cussing with me"],
-        # 2,
-        result3 = join_first_sentences(
-            ["I don't feel safe", "Are you cussing with me"],
-            2,
-        )
-        # print(result3)
-
-        a = ["a", "b", "c"]
-        b = [1, 2, 3]
-        # print(a[-len(a) + 1 : len(a)])
-        # print(b[-len(b) + 1 : len(b)])
-
-        # result = recur.zipmap(["a", "b", "c"], [1, 2, 3])
-        # print(result)
-
-        # root = [1, 2, [3, 4]]
-        # result = recur.sum_nested_list(root)
-        # print(result)
-
-        root = {
-            "Documents": {
-                "Proposal.docx": None,
-                "Receipts": {
-                    "January": {"receipt1.txt": None, "receipt2.txt": None},
-                    "February": {"receipt3.txt": None},
-                },
-            },
-        }
-        # result = recur.list_files(root)
-        # print(result)
-        # temp_list = []
-        # temp_list.append("a")
-        # print(temp_list)
-        #
-        # nested_documents = {1: {2: {3: {}, 4: {5: {}}}, 6: {}, 7: {8: {9: {10: {}}}}}}
-        # result = recur.count_nested_levels(nested_documents, 9)
-        # print(result)
-        # nested_documents = {1: {}, 2: {}, 3: {}}
-        val1 = []
-        val2 = [1, 2, 3]
-        val1.append(val2)
-        val1.append(4)
-        val1.append("5")
-        print(val1)
-        result = clos.new_collection(["Dan Evans"])
-        print(result)
-        result2 = clos.new_collection(["Charlie Prince"])
-        print(result2)
+        # sorted_items = sorted(test_dict.items())
+        # for key, value in sorted_items:
+        #     print(f"{key}: {value}")
+        test_list = [
+            ("user", "goku_fanatic"),
+            ("password", "kakarot1989"),
+        ]
+        for key, value in test_list:
+            print(f"{key}: {value}")
     except Exception as e:
         print(e)
 
