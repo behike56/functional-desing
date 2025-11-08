@@ -1,6 +1,6 @@
-import recursive as recur
-import closures as clos
-import decorators as deco
+from . import recursive as recur
+from . import closures as clos
+from . import decorators as deco
 
 
 def change_bullet_style(document):
@@ -30,10 +30,12 @@ import functools
 
 
 def join(doc_so_far, sentence):
-    return doc_so_far.join(sentence)
+    return doc_so_far + sentence
 
 
 def join_first_sentences(sentences, n):
+    if n == 0:
+        return ""
     temp = sentences[:n]
     result = functools.reduce(join, temp)
     return result
