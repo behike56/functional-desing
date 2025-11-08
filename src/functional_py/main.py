@@ -26,10 +26,12 @@ def is_start_with_asta(line) -> bool:
 
 
 def join(doc_so_far, sentence):
-    return doc_so_far.join(sentence)
+    return doc_so_far + sentence
 
 
 def join_first_sentences(sentences, n):
+    if n == 0:
+        return ""
     temp = sentences[:n]
     result = functools.reduce(join, temp)
     return result
