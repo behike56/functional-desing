@@ -22,9 +22,6 @@ def new_collection(initial_docs):
     return func
 
 
-from functools import reduce
-
-
 # def lines_with_sequence(char):
 #     def with_char(length):
 #         def with_length(doc):

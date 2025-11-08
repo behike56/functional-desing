@@ -1,6 +1,5 @@
-import recursive as recur
-import closures as clos
 import decorators as deco
+import functools
 
 
 def change_bullet_style(document):
@@ -24,9 +23,6 @@ def is_start_with_asta(line) -> bool:
         return False
 
     return True
-
-
-import functools
 
 
 def join(doc_so_far, sentence):
