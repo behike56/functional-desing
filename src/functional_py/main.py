@@ -1,6 +1,6 @@
-import recursive as recur
-import closures as clos
-import decorators as deco
+from . import recursive as recur
+from . import closures as clos
+from . import decorators as deco
 
 
 def change_bullet_style(document):
@@ -41,26 +41,11 @@ def join_first_sentences(sentences, n):
 
 def main():
     try:
-        deco.args_logger("hi", True, f_name="Lane", l_name="Wagner", age=28)
-        # test_dict = {
-        #     "a": 1,
-        #     "b": 2,
-        #     "c": 3,
-        #     "d": 4,
-        #     "e": 5,
-        #     "f": 6,
-        #     "g": 7,
-        # }
-
-        # sorted_items = sorted(test_dict.items())
-        # for key, value in sorted_items:
-        #     print(f"{key}: {value}")
         test_list = [
             ("user", "goku_fanatic"),
             ("password", "kakarot1989"),
         ]
-        for key, value in test_list:
-            print(f"{key}: {value}")
+        deco.args_logger(**dict(test_list))
     except Exception as e:
         print(e)
 
