@@ -39,11 +39,21 @@ def join_first_sentences(sentences, n):
 
 def main():
     try:
-        test_list = [
-            ("user", "goku_fanatic"),
-            ("password", "kakarot1989"),
+        lists = [
+            ["Customer ID", "Billed", "Paid"],
+            ["1", "100", "100"],
+            ["2", "400", "99"],
+            ["3", "50", "25"],
         ]
-        deco.args_logger(**dict(test_list))
+
+        temp = ""
+        for xs in lists:
+            temp += ",".join(xs) + "\\n"
+
+        print(("Processing...", temp))
+
+        result = map(lambda x: ",".join(x), lists)
+        print(str(result))
     except Exception as e:
         print(e)
 
