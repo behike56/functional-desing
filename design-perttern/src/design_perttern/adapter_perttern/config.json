@@ -1,0 +1,10 @@
+{
+    "epochcount": 100,
+    "lr": 0.001,
+    "batch_size": 32,
+    "optimizer": "adam",
+    "loss": "categorical_crossentropy",
+    "metrics": "accuracy",
+    "data_path": "data/data.csv",
+    "model_path": "models/model.h5"
+}

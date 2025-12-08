@@ -1,0 +1,10 @@
+<config>
+    <epochcount>100</epochcount>
+    <lr>0.001</lr>
+    <batch_size>32</batch_size>
+    <optimizer>adam</optimizer>
+    <loss>categorical_crossentropy</loss>
+    <metrics>accuracy</metrics>
+    <data_path>data/data.csv</data_path>
+    <model_path>models/model.h5</model_path>
+</config>
