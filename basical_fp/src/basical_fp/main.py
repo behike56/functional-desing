@@ -1,40 +1,4 @@
 import decorators as deco
-import functools
-
-
-def change_bullet_style(document):
-    return "\n".join(list(map(convert_line, document.split("\n"))))
-
-
-def convert_line(line):
-    old_bullet = "-"
-    new_bullet = "*"
-    if len(line) > 0 and line[0] == old_bullet:
-        return new_bullet + line[1:]
-    return line
-
-
-def remove_invalid_lines(document):
-    return "\n".join(filter(is_start_with_asta, document.split("\n")))
-
-
-def is_start_with_asta(line) -> bool:
-    if len(line) > 0 and line[0] == "-":
-        return False
-
-    return True
-
-
-def join(doc_so_far, sentence):
-    return doc_so_far + sentence
-
-
-def join_first_sentences(sentences, n):
-    if n == 0:
-        return ""
-    temp = sentences[:n]
-    result = functools.reduce(join, temp)
-    return result
 
 
 def main():
